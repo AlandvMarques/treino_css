@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+}
+
+button{
+    --border:5px;
+    --slant:0.7em;
+    --color: #37e8fc;
+    font-size: 25px;
+    padding: 0.4em 1.2em;
+    margin-left: 9vh;
+    border: none;
+    font-weight: bold;
+    color: var(--color);
+    background: linear-gradient(to bottom left, var(--color)50%, #0000 50.1%) top right, linear-gradient(to top right, var(--color)50%, #0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3 * var(--border)) calc(var(--slant) + 1.3 * var(--border));
+    background-repeat: no-repeat;
+    box-shadow: 0 0 0 200px inset var(--s,#0000), 0 0 0 var(--border) inset var(--color);
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--slant)) 0,
+        100% var(--slant),
+        100% 100%,
+        var(--slant) 100%,
+        0 calc(100% - var(--slant))
+    );
+}
+
+button:hover, button:active{
+    background-size: 100% 100%;
+    color: #afff;
+
+}
